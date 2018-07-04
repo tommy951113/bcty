@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sportType">
+        <item>羽毛球</item>
+        <item>跑步</item>
+        <item>篮球</item>
+        <item>健身</item>
+        <item>乒乓球</item>
+        <item>足球</item>
+        <item>排球</item>
+    </string-array>
+    <string-array name="stadium">
+        <item>方肇周体育馆</item>
+        <item>第二体育馆</item>
+        <item>一组团篮球场</item>
+        <item>三组团篮球场</item>
+        <item>四组团篮球场</item>
+        <item>一组团排球场</item>
+        <item>四组团排球场</item>
+        <item>一组团足球场</item>
+    </string-array>
+    <string-array name="period">
+        <item>8:00—12:00</item>
+        <item>12:00—8:00</item>
+        <item>18:00—23:00</item>
+    </string-array>
+</resources>

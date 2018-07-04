@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Bcty</string>
+    <string name="username">姓名</string>
+    <string name="contact">联系方式</string>
+    <string name="period">时间段</string>
+    <string name="sport_type">运动类型</string>
+    <string name="statium">场馆</string>
+    <string name="num">人数</string>
+    <string name="submit">提交</string>
+    <string name="date">日期</string>
+    <string name="select_date">选择日期</string>
+    <string name="select_period">选择时间段</string>
+</resources>
