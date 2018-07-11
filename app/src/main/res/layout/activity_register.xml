@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.tommy.bcty.MainActivity">
+    tools:context="com.example.tommy.bcty.register.RegisterActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -166,5 +166,15 @@
         android:layout_marginTop="16dp"
         android:background="@color/colorAccent"
         android:text="@string/submit"
-        android:textColor="@color/smssdk_white" />
+        android:textColor="#ffffff" />
+    <Button
+        android:id="@+id/btn_jump"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorAccent"
+        android:text="跳转到SportlistActivity"
+        android:textColor="#ffffff" />
 </LinearLayout>

@@ -10,4 +10,5 @@
     <string name="date">日期</string>
     <string name="select_date">选择日期</string>
     <string name="select_period">选择时间段</string>
+    <string name="sport_image">运动图片</string>
 </resources>
