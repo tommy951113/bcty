@@ -1,6 +1,7 @@
 package com.example.tommy.bcty.register;
 
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.tommy.bcty.R;
@@ -18,8 +20,8 @@ import com.example.tommy.bcty.sportlist.SportListActivity;
 import java.io.IOException;
 import java.util.Calendar;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -28,34 +30,34 @@ import okhttp3.Response;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    @InjectView(R.id.username)
+    @BindView(R.id.username)
     EditText username;
-    @InjectView(R.id.contact)
+    @BindView(R.id.contact)
     EditText contact;
-    @InjectView(R.id.date)
+    @BindView(R.id.date)
     TextView date;
-    @InjectView(R.id.period)
+    @BindView(R.id.period)
     TextView period;
-    @InjectView(R.id.sportType)
+    @BindView(R.id.sportType)
     AppCompatSpinner sportType;
-    @InjectView(R.id.stadium)
+    @BindView(R.id.stadium)
     AppCompatSpinner stadium;
-    @InjectView(R.id.num)
+    @BindView(R.id.num)
     EditText num;
-    @InjectView(R.id.btn_submit)
+    @BindView(R.id.btn_submit)
     Button btnSubmit;
-
-
-    public static final String root = "http://192.168.0.121";
-    public static final String url = root + "/bcty/insert.php";
-    @InjectView(R.id.btn_jump)
+    @BindView(R.id.btn_jump)
     Button btnJump;
+
+
+    public static final String root = "http://192.168.0.125";
+    public static final String url = root + "/bcty/insert.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         //初始化短信验证码登录
 //        MobSDK.init(this);
 //        sendCode(this);
@@ -133,16 +135,28 @@ public class RegisterActivity extends AppCompatActivity {
         year = currentCalendar.get(Calendar.YEAR);
         month = currentCalendar.get(Calendar.MONTH);
         day = currentCalendar.get(Calendar.DAY_OF_MONTH);
-        final DatePickerDialog dialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+        final DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int dayOfMonth) {
                 date.setText(year + "-" + (month + 1) + "-" + dayOfMonth);
             }
         }, year, month, day);
+        final TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker timePicker, int hour, int minute) {
+                period.setText(hour + ":"+minute);
+            }
+        },0,0,true);
         date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dialog.show();
+                datePickerDialog.show();
+            }
+        });
+        period.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                timePickerDialog.show();
             }
         });
     }

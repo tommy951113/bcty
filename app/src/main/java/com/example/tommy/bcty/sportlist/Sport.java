@@ -5,17 +5,17 @@ package com.example.tommy.bcty.sportlist;
  */
 
 public class Sport {
-    private int sportImageId;
+    private String type;
     private String statium;
     private String time;
     private String stu_num;
 
-    public int getSportImageId() {
-        return sportImageId;
+    public String getType() {
+        return type;
     }
 
-    public void setSportImageId(int sportImageId) {
-        this.sportImageId = sportImageId;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getStatium() {

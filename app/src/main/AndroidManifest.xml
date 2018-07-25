@@ -11,12 +11,16 @@
         android:theme="@style/AppTheme">
         <activity android:name=".register.RegisterActivity">
             <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name=".sportlist.SportListActivity"></activity>
+        <activity android:name=".sportlist.SportListActivity" />
+        <activity android:name=".notification.NotificationActivity"
+            android:exported="true">
+
+        </activity>
     </application>
 
 </manifest>

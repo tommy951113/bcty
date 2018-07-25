@@ -2,6 +2,7 @@ package com.example.tommy.bcty.sportlist;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -35,10 +36,12 @@ public class SportListActivity extends AppCompatActivity {
                     String response = WebUtil.get("select.php");
                     Gson gson = new Gson();
                     sportList = gson.fromJson(response,new TypeToken<List<Sport>>(){}.getType());
+
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
                             RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_sport);
+                            recyclerView.addItemDecoration(new DividerItemDecoration(SportListActivity.this,DividerItemDecoration.VERTICAL));
                             LinearLayoutManager layoutManger = new LinearLayoutManager(SportListActivity.this);
                             recyclerView.setLayoutManager(layoutManger);
                             SportAdapter adapter = new SportAdapter(sportList);

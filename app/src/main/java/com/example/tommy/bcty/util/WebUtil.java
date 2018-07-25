@@ -16,7 +16,7 @@ public class WebUtil {
     private static final MediaType JSON
             = MediaType.parse("application/json; charset=utf-8");
 
-    private static final String rootURL = "http://192.168.0.121/bcty/";
+    private static final String rootURL = "http://192.168.0.125/bcty/";
 
     public static String post(String url, String json) throws IOException {
         OkHttpClient client = new OkHttpClient();
